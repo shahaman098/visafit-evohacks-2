@@ -1,5 +1,10 @@
 # VisaFit
 
+> **Official theme:** Projects for Social Good: build something that makes a real difference for people and communities.
+>
+> VisaFit screens opportunities so builders spend the hack on the theme, not on dead-end eligibility.
+
+
 **Live demo:** https://shahaman098.github.io/visafit-evohacks-2/
 
 **EvoHacks 2** solo project by [shahaman098](https://github.com/shahaman098) (Aman "Kris" Sah, Brunel CS AI).

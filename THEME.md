@@ -17,3 +17,8 @@ When the theme drops, run:
 .venv/bin/python -m visafit.pivot "THEME TEXT"
 git commit -am "Pivot to official theme" && git push
 ```
+
+## Official theme (recorded)
+
+> Projects for Social Good: build something that makes a real difference for people and communities.
+

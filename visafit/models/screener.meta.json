@@ -1,0 +1,11 @@
+{
+  "model": "TfidfVectorizer + LogisticRegression",
+  "labels": [
+    "eligible",
+    "skip",
+    "uncertain"
+  ],
+  "n_samples": 30,
+  "path": "/Users/efi/Hackathons/EvoHacks-2/visafit/models/screener.joblib",
+  "note": "Trained classifier over opportunity-rules text for eligibility triage."
+}
