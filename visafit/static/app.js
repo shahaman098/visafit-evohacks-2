@@ -1,4 +1,5 @@
 const $ = (id) => document.getElementById(id);
+const HIST_KEY = "visafit.history.v1";
 
 const SKIP_SAMPLE = `Eligibility: Year 2 UK undergraduates only.
 Format: In-person San Francisco, must attend all days.
@@ -10,6 +11,51 @@ United Kingdom residents welcome. No travel required.
 Final-year undergraduates are eligible.`;
 
 let lastVerdict = null;
+
+function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(HIST_KEY) || "[]");
+  } catch (_) {
+    return [];
+  }
+}
+
+function saveHistory(items) {
+  localStorage.setItem(HIST_KEY, JSON.stringify(items.slice(0, 8)));
+}
+
+function renderHistory() {
+  const ul = $("history");
+  if (!ul) return;
+  const items = loadHistory();
+  ul.innerHTML = items
+    .map((it, i) => {
+      const snippet = (it.rules || "").replace(/\s+/g, " ").slice(0, 72);
+      return `<li data-i="${i}"><span class="tag ${it.status}">${it.status}</span>${snippet}</li>`;
+    })
+    .join("");
+  ul.querySelectorAll("li").forEach((li) => {
+    li.onclick = () => {
+      const it = loadHistory()[Number(li.dataset.i)];
+      if (!it) return;
+      $("rules").value = it.rules || "";
+      render(it.verdict || { status: it.status, summary: it.summary, reasons: [], signals: {} });
+    };
+  });
+}
+
+function pushHistory(rules, data) {
+  const items = loadHistory();
+  items.unshift({
+    at: new Date().toISOString(),
+    status: data.status,
+    summary: data.summary,
+    rules,
+    verdict: data,
+  });
+  saveHistory(items);
+  renderHistory();
+}
 
 function render(data) {
   lastVerdict = data;
@@ -83,32 +129,43 @@ if (copyBtn) {
   };
 }
 
+const clearBtn = $("clear_history");
+if (clearBtn) {
+  clearBtn.onclick = () => {
+    localStorage.removeItem(HIST_KEY);
+    renderHistory();
+  };
+}
+
 $("run").onclick = async () => {
   const body = {
     rules_text: $("rules").value,
     ...profileFromForm(),
   };
+  let data;
   try {
     const res = await fetch("/api/screen", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    if (res.ok) {
-      render(await res.json());
-      return;
-    }
+    if (res.ok) data = await res.json();
   } catch (_) {
     /* static host */
   }
-  if (window.VisaFit && typeof window.VisaFit.screen === "function") {
-    render(window.VisaFit.screen(body.rules_text, body));
-    return;
+  if (!data && window.VisaFit && typeof window.VisaFit.screen === "function") {
+    data = window.VisaFit.screen(body.rules_text, body);
   }
-  render({
-    status: "uncertain",
-    summary: "No API and no client engine loaded.",
-    reasons: [],
-    signals: {},
-  });
+  if (!data) {
+    data = {
+      status: "uncertain",
+      summary: "No API and no client engine loaded.",
+      reasons: [],
+      signals: {},
+    };
+  }
+  render(data);
+  pushHistory(body.rules_text, data);
 };
+
+renderHistory();

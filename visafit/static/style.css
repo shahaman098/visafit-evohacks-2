@@ -94,3 +94,12 @@ pre {
   font-size: 0.8rem;
   color: var(--muted);
 }
+
+.history-h { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; }
+.history { list-style:none; padding:0; margin:0; color:var(--muted); font-size:0.85rem; }
+.history li { padding:0.45rem 0; border-bottom:1px solid var(--border); cursor:pointer; }
+.history li:hover { color:var(--ink); }
+.history .tag { font-weight:700; text-transform:uppercase; margin-right:0.4rem; }
+.history .tag.eligible { color:var(--ok); }
+.history .tag.skip { color:var(--skip); }
+.history .tag.uncertain { color:var(--warn); }

@@ -52,7 +52,7 @@ pytest -q
 
 ## Stack
 
-Python 3 · FastAPI · Uvicorn · Pytest · vanilla HTML/CSS/JS
+Python 3 · FastAPI · Uvicorn · Pytest · vanilla HTML/CSS/JS + localStorage history
 
 ## License
 
