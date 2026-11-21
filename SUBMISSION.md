@@ -10,7 +10,7 @@ Opens: **21 Nov 2026 9:00am PST** (17:00 UTC) · Due: **22 Nov 2026 12:00pm PST*
 | Tagline | Paste opportunity rules. Get eligible / skip / uncertain for a UK student-visa builder. |
 | Repo | https://github.com/shahaman098/visafit-evohacks-2 |
 | Demo video | https://youtu.be/03YcRirbqIA |
-| Demo | `uvicorn visafit.app:app --port 8791` → http://127.0.0.1:8791 |
+| Demo | https://shahaman098.github.io/visafit-evohacks-2/ (GitHub Pages) · local `uvicorn visafit.app:app --port 8791` |
 | Built with | Python, FastAPI, Uvicorn, Pytest, HTML, CSS, JavaScript |
 
 ## When theme drops

@@ -1,5 +1,7 @@
 # VisaFit
 
+**Live demo:** https://shahaman098.github.io/visafit-evohacks-2/
+
 **EvoHacks 2** solo project by [shahaman098](https://github.com/shahaman098) (Aman "Kris" Sah, Brunel CS AI).
 
 Paste opportunity rules (hackathon, grant, programme). VisaFit returns a structured eligibility screen for a **UK international student on a student visa**: student-only gates, age, country/residency limits, travel, and whether it looks like a job (which this builder routes elsewhere).
