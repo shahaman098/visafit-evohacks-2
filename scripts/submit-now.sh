@@ -29,7 +29,7 @@ git commit -m "Pivot VisaFit copy to official EvoHacks theme." || true
 git push origin main
 
 echo ""
-echo "NEXT (browser, signed in as shahaman098):"
+echo "NEXT (browser, signed in as shahaman098) — see also artifacts/.../DEVPOST-ATTACH.md:"
 echo "1. https://devpost.com/software/visafit-evohacks-2/edit  — refresh About if needed"
 echo "2. https://devpost.com/submit-to/31721-evohacks-2/manage/submissions"
 echo "3. Submit a project → VisaFit → final Submit"
