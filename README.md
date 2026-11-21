@@ -57,3 +57,11 @@ Python 3 · FastAPI · Uvicorn · Pytest · vanilla HTML/CSS/JS + localStorage h
 ## License
 
 MIT
+
+## Docker
+
+```bash
+docker build -t visafit .
+docker run --rm -p 8791:8791 visafit
+# http://127.0.0.1:8791
+```
