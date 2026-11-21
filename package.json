@@ -1,0 +1,12 @@
+{
+  "name": "visafit-evohacks-2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "devpost:attach": "node scripts/devpost-attach.mjs",
+    "devpost:submit": "node scripts/devpost-attach.mjs --submit"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

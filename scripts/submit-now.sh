@@ -47,3 +47,13 @@ EOF
 
 # Open manage page for the human/session
 open "https://devpost.com/submit-to/31721-evohacks-2/manage/submissions" 2>/dev/null || true
+
+# Optional CDP attach (dry-run unless DEVPOST_SUBMIT=1)
+if curl -sf http://127.0.0.1:9223/json/version >/dev/null; then
+  if [[ "${DEVPOST_SUBMIT:-}" == "1" ]]; then
+    node "$ROOT/scripts/devpost-attach.mjs" --submit || true
+  else
+    node "$ROOT/scripts/devpost-attach.mjs" || true
+  fi
+fi
+
