@@ -25,10 +25,10 @@ cd ~/Hackathons/EvoHacks-2
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn visafit.app:app --reload --port 8787
+uvicorn visafit.app:app --reload --port 8791
 ```
 
-Open http://127.0.0.1:8787
+Open http://127.0.0.1:8791
 
 ```bash
 pytest -q
