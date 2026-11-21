@@ -10,3 +10,10 @@ When the theme drops:
 2. Rewrite the one-line problem in `README.md` and the UI lede so Fit-to-Prompt is obvious.
 3. Keep the eligibility engine if it still serves the theme; otherwise wrap it or swap the UI.
 4. Re-record the ≤3 min demo video against the themed story.
+
+When the theme drops, run:
+
+```bash
+.venv/bin/python -m visafit.pivot "THEME TEXT"
+git commit -am "Pivot to official theme" && git push
+```
