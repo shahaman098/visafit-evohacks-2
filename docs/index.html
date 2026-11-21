@@ -31,13 +31,13 @@
       </fieldset>
 
       <div class="actions">
-        <button id="run" type="button">Screen this</button>
+        <button id="run" type="button" aria-describedby="rules">Screen this</button>
         <button id="sample_skip" type="button" class="ghost">Load skip sample</button>
         <button id="sample_ok" type="button" class="ghost">Load eligible sample</button>
       </div>
     </section>
 
-    <section class="panel result" id="result" hidden>
+    <section class="panel result" id="result" hidden aria-live="polite">
       <p class="status" id="status"></p>
       <p id="summary"></p>
       <ul id="reasons"></ul>
