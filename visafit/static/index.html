@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VisaFit — opportunity eligibility for UK student-visa builders</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">EvoHacks 2 · VisaFit</p>
+      <h1>Will this opportunity actually take you?</h1>
+      <p class="lede">
+        Paste the official rules. Get a clear eligible / skip / uncertain call for a
+        UK international student on a student visa — before you burn a night on it.
+      </p>
+    </header>
+
+    <section class="panel">
+      <label for="rules">Rules text</label>
+      <textarea id="rules" rows="10" placeholder="Paste eligibility, location, year level, deadline…"></textarea>
+
+      <fieldset>
+        <legend>Your profile</legend>
+        <label><input type="checkbox" id="student_visa" checked /> UK student visa</label>
+        <label><input type="checkbox" id="final_year" checked /> Final year</label>
+        <label><input type="checkbox" id="uk_based" checked /> Based in UK / London</label>
+        <label><input type="checkbox" id="will_travel_abroad" /> Will travel abroad if needed</label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="run" type="button">Screen this</button>
+        <button id="sample_skip" type="button" class="ghost">Load skip sample</button>
+        <button id="sample_ok" type="button" class="ghost">Load eligible sample</button>
+      </div>
+    </section>
+
+    <section class="panel result" id="result" hidden>
+      <p class="status" id="status"></p>
+      <p id="summary"></p>
+      <ul id="reasons"></ul>
+      <pre id="signals"></pre>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
