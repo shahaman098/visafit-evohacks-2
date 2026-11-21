@@ -25,3 +25,9 @@ Opens: **21 Nov 2026 9:00am PST** (17:00 UTC) · Due: **22 Nov 2026 12:00pm PST*
 
 - Built for this hackathon in `~/Hackathons/EvoHacks-2` (heuristic engine, API, UI, tests, demo).
 - No sponsor SDK wired yet (MojoAuth / SSOJet / Agentboxd left for theme-fit if useful).
+
+## Devpost project (pre-submit)
+
+- Portfolio project: https://devpost.com/software/visafit-evohacks-2
+- YouTube demo (unlisted): https://youtu.be/03YcRirbqIA
+- Attach to EvoHacks 2 when submissions open (21 Nov 9:00am PST).
